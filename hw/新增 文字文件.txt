@@ -1,0 +1,29 @@
+char* es(char* str){
+	MyStack s1;
+	char result[MAX];
+	char tem;
+	int i=0,j=0,len;
+	len=strlen(str);
+	while(i!=len){
+		s1.Push(str[i]);
+		
+		if(str[i]=='s'){
+			while(tem!='e'){
+				tem=s1.Pop();
+				if(s1.IsEmpty()){
+					return str;
+				}
+			}
+			
+			
+		}
+		i++;
+	}
+	
+	while(!s1.IsEmpty()){
+		result[s1.top]=s1.Pop();
+		
+	}
+	
+	return es(result);
+}
